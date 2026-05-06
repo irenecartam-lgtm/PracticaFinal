@@ -1,5 +1,5 @@
 body {
-  background-color: 254 250 224;
+  background-color: rgb(254, 250, 224);
   color: var(--text);
   font-family: var(--font-body);
 }
@@ -9,8 +9,6 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 20px 5%;
-  background: var(--dark-2);
-  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 10;
