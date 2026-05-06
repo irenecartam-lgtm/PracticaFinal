@@ -1,9 +1,11 @@
 body {
-  background-color: rgb(254, 250, 224);
+  background-color: rgb(251, 249, 240);
   font-family: "Figtree", sans-serif;
 }
 
 header {
+
+  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +13,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+  background-color: rgb(255, 166, 82);
 }
 
 nav ul {
