@@ -1,7 +1,6 @@
 body {
   background-color: rgb(254, 250, 224);
-  color: var(--text);
-  font-family: var(--font-body);
+  font-family: "Figtree", sans-serif;
 }
 
 header {
@@ -12,4 +11,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
