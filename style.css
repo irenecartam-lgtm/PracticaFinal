@@ -1,11 +1,13 @@
 body {
+  width: 100vw;
+  height: 100vh;
   background-color: rgb(251, 249, 240);
   font-family: "Figtree", sans-serif;
 }
 
 header {
-
   
+
   display: flex;
   align-items: center;
   justify-content: space-between;
