@@ -1,47 +1,87 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TripPlan+</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Figtree:ital,wght@0,300..900;1,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-    <script src="index.js" defer></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TripPlan+</title>
 
-  <body>
-    <header>
-      <h1>TripPlan+</h1>
-      <nav class="nav">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#my-trips">My trips</a></li>
-          <li><a href="#plan-trip">Plan a trip IA</a></li>
-          <li><a href="#weather">Weather</a></li>
-          <li><a href="#about-us">About us</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section>
-        <h2>Home</h2>
-      </section>
-      <section>
-        <h2>My trips</h2>
-      </section>
-      <section>
-        <h2>Plan a trip IA</h2>
-      </section>
-      <section>
-        <h2>Weather</h2>
-      </section>
-      <section>
-        <h2>About us</h2>
-      </section>
-    </main>
-    <aside></aside>
-  </body>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Figtree:ital,wght@0,300..900;1,300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>TripPlan+</h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#popular"> Most Popular</a></li>
+        <li><a href="#plan-trip">Plan a trip IA</a></li>
+        <li><a href="#weather">Weather</a></li>
+        <li><a href="#about-us">About us</a></li>
+      </ul>
+    </nav>
+
+    <nav id="nav-login" class="nav">
+        <button class="login">Login to My trips</button>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="active">
+
+      <div class="home-content">
+        <div class="home-text">
+          <h2>Welcome to TripPlan+</h2>
+
+          <p class="home-tag">PLAN YOUR NEXT ADVENTURE</p>
+
+          <p class="home-description">
+            Welcome to TripPlan+, your ultimate travel companion! Whether you're a seasoned traveler or planning your
+            first adventure, TripPlan+ is here to make your journey unforgettable. With our user-friendly interface and
+            powerful features, you can easily plan, organize, and share your trips with friends and family. From
+            discovering new destinations to creating personalized itineraries, TripPlan+ has everything you need to turn
+            your travel dreams into reality. Start exploring today and let TripPlan+ be your guide to unforgettable
+            experiences around the world!
+          </p>
+
+          <div class="home-buttons">
+            <button>Start planning</button>
+            <button>Explore trips</button>
+          </div>
+        </div>
+
+
+        <div class="home-image">
+          <img src="https://cdng.europosters.eu/pod_public/800webp/122734.webp" alt="Playa" />
+
+          <img src="https://blackpepper.travel/cache/2024-01/viajes-namibia-blackpepper-0033-grupo-turistas-caminando-sobre-dunas-desierto-namibia-africa-austral-2x-1181x786.jpg" alt="Desierto" />
+
+          <img src="https://www.hola.com/horizon/original_aspect_ratio/2892976dcc3b-manarola-2a-a.jpg" alt="Costa de Italia" />
+
+        </div>
+      </div>
+
+    </section>
+    <section id="my-trips">
+      <h2>Popular Destinations</h2>
+    </section>
+    <section>
+      <h2>Plan a trip IA</h2>
+    </section>
+    <section>
+      <h2>Weather</h2>
+    </section>
+    <section>
+      <h2>About us</h2>
+    </section>
+  </main>
+  <aside></aside>
+</body>
+
 </html>
