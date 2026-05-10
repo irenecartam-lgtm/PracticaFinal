@@ -29,8 +29,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: rgba(255, 166, 82, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 166, 82, 1);
 }
 
 header h1 {
@@ -58,19 +57,20 @@ nav ul li a:hover {
 
 #nav-login .login {
   padding: 10px 20px;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 30px;
   background-color: black;
   color: white;
   font-weight: 700;
   font-size: 0.8rem;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 #nav-login .login:hover {
-  background-color: rgb(243, 114, 1);
+  background-color: rgb(250, 119, 4);
   color: white;
+  border-color: black;
 }
 
 /* HERO */
@@ -110,9 +110,6 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
-.home-text span {
-  color: rgb(255, 166, 82);
-}
 
 .home-text h3 {
   font-size: 1.8rem;
@@ -151,10 +148,24 @@ nav ul li a:hover {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* botón principal del hero */
-.home-buttons button:hover {
-  background-color: rgb(255, 140, 40);
-  color: white;
+#primary-button {
+  background-color: rgb(255, 166, 82);
+  color: rgb(0, 0, 0);
+  border: black solid 2px;
+}
+
+#primary-button:hover {
+  background-color: rgb(250, 119, 4);
+}
+
+#secondary-button {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: black solid 2px;
+}
+
+#secondary-button:hover {
+  background-color:  rgb(250, 119, 4);
 }
 
 
