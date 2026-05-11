@@ -318,13 +318,9 @@ section:not(.home) {
   background-color: rgb(250, 119, 4);
 }
 
-// ── TRIPS ── //
 
 /* ───────── TRIPS PAGE ───────── */
 
-.trips-body {
-  background: #f7f3ef;
-}
 
 .trips-page {
   padding: 40px 5%;
@@ -511,6 +507,457 @@ section:not(.home) {
 }
 
 /* RESPONSIVE */
+
+@media(max-width: 900px) {
+
+  .trip-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-section {
+    grid-template-columns: 1fr;
+  }
+
+  .trip-hero-text h2 {
+    font-size: 3rem;
+  }
+
+}
+
+/* ───────── MY TRIPS GRID ───────── */
+
+#trip-list {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+
+  gap: 25px;
+
+  margin-top: 30px;
+
+}
+
+/* ───────── MINI TRIP CARD ───────── */
+
+.trip-mini-card {
+
+  background: white;
+
+  border-radius: 25px;
+
+  padding: 25px;
+
+  min-height: 180px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  border: 2px solid transparent;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+.trip-mini-card:hover {
+
+  transform: translateY(-10px);
+
+  border-color: rgb(255, 166, 82);
+
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+
+}
+
+.trip-mini-card h3 {
+
+  font-size: 1.7rem;
+
+  margin-bottom: 15px;
+
+}
+
+.trip-mini-card p {
+
+  color: #666;
+
+  line-height: 1.7;
+
+}
+
+/* ───────── MODAL ───────── */
+
+.trip-modal {
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition: 0.3s;
+
+  z-index: 999;
+
+}
+
+.trip-modal.active {
+
+  opacity: 1;
+
+  pointer-events: auto;
+
+}
+
+.modal-content {
+
+  width: 90%;
+
+  max-width: 700px;
+
+  background: white;
+
+  border-radius: 30px;
+
+  padding: 40px;
+
+  position: relative;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+}
+
+.close-modal {
+
+  position: absolute;
+
+  top: 20px;
+
+  right: 25px;
+
+  border: none;
+
+  background: none;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+
+}
+
+/* ───────── TRIP INFO ───────── */
+
+.trip-info {
+
+  margin-top: 20px;
+
+  line-height: 2;
+
+}
+
+/* ───────── ADD ACTIVITY BUTTON ───────── */
+
+.add-activity-btn {
+
+  width: 100%;
+
+  margin-top: 30px;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  background: rgb(255, 166, 82);
+
+  font-weight: 700;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+}
+
+.add-activity-btn:hover {
+
+  background: rgb(250, 119, 4);
+
+}
+
+/* ───────── HIDDEN FORM ───────── */
+
+.activity-form-hidden {
+
+  display: none;
+
+}
+
+/* ───────── ACTIVITY FORM ───────── */
+
+.activity-form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+  margin-top: 25px;
+
+}
+
+.activity-form input {
+
+  padding: 14px;
+
+  border-radius: 15px;
+
+  border: 2px solid #eee;
+
+}
+
+.activity-form button {
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: black;
+
+  color: white;
+
+  cursor: pointer;
+
+}
+
+/* ───────── ACTIVITY ITEM ───────── */
+
+.activity-item {
+
+  background: #f7f7f7;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  margin-top: 20px;
+
+}
+
+/* ───────── DELETE BUTTON ───────── */
+
+.delete-btn {
+
+  margin-top: 30px;
+
+  padding: 14px 20px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: crimson;
+
+  color: white;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+}
+
+/* ───────── GRID ───────── */
+
+#trip-list {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+
+  gap: 25px;
+
+  margin-top: 30px;
+
+}
+
+/* ───────── CARD ───────── */
+
+.trip-mini-card {
+
+  background: white;
+
+  border-radius: 25px;
+
+  padding: 25px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+  overflow: hidden;
+
+}
+
+.trip-mini-card:hover {
+
+  transform: translateY(-8px);
+
+}
+
+.trip-preview h3 {
+
+  font-size: 1.6rem;
+
+  margin-bottom: 10px;
+
+}
+
+.trip-preview p {
+
+  color: #666;
+
+}
+
+/* ───────── DETAILS ───────── */
+
+.trip-details {
+
+  max-height: 0;
+
+  overflow: hidden;
+
+  transition: 0.4s ease;
+
+}
+
+.trip-mini-card.active .trip-details {
+
+  max-height: 1000px;
+
+  margin-top: 25px;
+
+}
+
+/* ───────── BUTTONS ───────── */
+
+.add-activity-btn,
+.delete-btn {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  margin-top: 20px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+}
+
+.add-activity-btn {
+
+  background: rgb(255, 166, 82);
+
+}
+
+.delete-btn {
+
+  background: crimson;
+
+  color: white;
+
+}
+
+/* ───────── FORM ───────── */
+
+.activity-form-hidden {
+
+  display: none;
+
+}
+
+.activity-form {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-top: 20px;
+
+}
+
+.activity-form input {
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  border: 2px solid #eee;
+
+}
+
+.activity-form button {
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: black;
+
+  color: white;
+
+}
+
+/* ───────── ACTIVITIES ───────── */
+
+.activity-item {
+
+  background: #f7f7f7;
+
+  padding: 15px;
+
+  border-radius: 15px;
+
+  margin-top: 15px;
+
+}
+
+/* ───────── RESPONSIVE ───────── */
 
 @media(max-width: 900px) {
 
