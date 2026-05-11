@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="trips.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>My Trips</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#popular"> Most Popular</a></li>
+                <li><a href="#plan-trip">Plan a trip IA</a></li>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#about-us">About us</a></li>
+            </ul>
+        </nav>
+
+        <nav id="nav-login" class="nav">
+            <button class="login">Login to My trips</button>
+        </nav>
+    </header>
+<main class="trips-page">
+
+    <section class="trip-hero">
+
+      <div class="trip-hero-text">
+        <p class="trip-tag">PLAN YOUR NEXT ADVENTURE</p>
+
+        <h2>Create and manage your trips easily</h2>
+
+        <p>
+          Organize destinations, dates and activities in one place.
+          Keep all your travel plans saved automatically.
+        </p>
+      </div>
+
+      <div class="trip-hero-image">
+        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764ce7?q=80&w=1200&auto=format&fit=crop"
+          alt="Travel">
+      </div>
+
+    </section>
+
+    <section class="planner-section">
+
+      <div class="planner-form-container">
+
+        <h2>Create a new trip</h2>
+
+        <form id="trip-form">
+
+          <div class="input-group">
+            <label>Trip name</label>
+            <input type="text" id="trip-name" required>
+          </div>
+
+          <div class="input-group">
+            <label>Origin</label>
+            <input type="text" id="trip-origin" required>
+          </div>
+
+          <div class="input-group">
+            <label>Destination</label>
+            <input type="text" id="trip-destination" required>
+          </div>
+
+          <div class="dates-row">
+
+            <div class="input-group">
+              <label>Start date</label>
+              <input type="date" id="trip-start" required>
+            </div>
+
+            <div class="input-group">
+              <label>End date</label>
+              <input type="date" id="trip-end" required>
+            </div>
+
+          </div>
+
+          <button type="submit" class="trip-save-btn">
+            Save Trip
+          </button>
+
+        </form>
+
+      </div>
+
+      <div class="trips-container">
+
+        <h2>My Trips</h2>
+
+        <div id="trip-list"></div>
+
+      </div>
+
+    </section>
+
+  </main>
+</body>
+</html>
