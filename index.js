@@ -30,3 +30,61 @@ prevBtn.addEventListener("click", () => {
     carousel.style.transform = `translateX(0)`;
   }, 20);
 });
+
+/* ───────── ABOUT US ───────── */
+
+const creatorCards = document.querySelectorAll(".creator-card");
+
+const creatorDescription = document.getElementById("creator-description");
+
+const creatorsInfo = {
+
+  ariadna: {
+
+    name: "Ariadna",
+
+    text: `
+      Ariadna is passionate about web design and user experiences.
+      She enjoys creating clean and modern interfaces that make
+      travel planning easier and more enjoyable.
+    `
+  },
+
+  irene: {
+
+    name: "Irene",
+
+    text: `
+      Irene focuses on frontend development and interactive design.
+      She loves creating dynamic websites and digital experiences
+      with a modern and intuitive style.
+    `
+  }
+
+};
+
+creatorCards.forEach(card => {
+
+  card.addEventListener("click", () => {
+
+    creatorCards.forEach(c => {
+
+      c.classList.remove("active");
+
+    });
+
+    card.classList.add("active");
+
+    const creator = card.dataset.creator;
+
+    creatorDescription.innerHTML = `
+
+      <h3>${creatorsInfo[creator].name}</h3>
+
+      <p>${creatorsInfo[creator].text}</p>
+
+    `;
+
+  });
+
+});
