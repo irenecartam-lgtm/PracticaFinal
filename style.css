@@ -79,7 +79,7 @@ nav ul li a:hover {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 8%;
+  padding: 100 5%;
 }
 
 .home-content {
@@ -114,6 +114,7 @@ nav ul li a:hover {
   font-size: 1.8rem;
   margin-bottom: 20px;
   font-weight: 500;
+
 }
 
 .home-description {
@@ -213,6 +214,8 @@ section:not(.home) {
 .popular-header {
   padding: 0 80px;          /* alinea el título con el área de cartas */
   margin-bottom: 40px;
+  text-align: center;
+
 }
 
 .popular-header h2 {
@@ -1074,39 +1077,26 @@ footer {
 /* ───────── ABOUT US ───────── */
 
 #about-us {
-
   padding: 100px 5%;
-
 }
 
 /* HEADER */
 
 .about-header {
-
   text-align: center;
-
-  margin-bottom: 70px;
-
+  margin-bottom: 20px;
 }
 
 .about-tag {
-
   color: rgb(255, 166, 82);
-
   font-weight: 700;
-
   letter-spacing: 2px;
-
-  margin-bottom: 15px;
 
 }
 
 .about-header h2 {
-
-  font-size: 4rem;
-
-  margin-bottom: 20px;
-
+  font-size: 3rem;
+  /* margin-bottom: 10px; */
 }
 
 .about-description {
@@ -1195,7 +1185,7 @@ footer {
 
 .creator-description {
 
-  max-width: 900px;
+  max-width: 700px;
 
   margin: auto;
 
@@ -1203,7 +1193,7 @@ footer {
 
   backdrop-filter: blur(5px);
 
-  padding: 50px;
+  padding: 30px;
 
   border-radius: 30px;
 
@@ -1214,9 +1204,7 @@ footer {
 }
 
 .creator-description h3 {
-
   font-size: 2rem;
-
   margin-bottom: 20px;
 
 }
@@ -1324,27 +1312,28 @@ footer {
 ══════════════════════════════════════ */
 
 #weather {
-  padding: 80px 5%;
+  padding: 100px 5%;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .weather-header {
+  /* min-height: ; */
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .weather-tag {
   color: rgb(255, 166, 82);
   font-weight: 700;
   letter-spacing: 2px;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .weather-header h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 800;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .weather-description {
@@ -1395,7 +1384,7 @@ footer {
   text-align: center;
   color: #e74c3c;
   font-weight: 600;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   min-height: 24px;
 }
 
