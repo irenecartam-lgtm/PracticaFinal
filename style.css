@@ -1114,17 +1114,11 @@ footer {
 /* CARDS */
 
 .creators-container {
-
   display: flex;
-
   justify-content: center;
-
   gap: 40px;
-
   flex-wrap: wrap;
-
-  margin-bottom: 50px;
-
+  margin-bottom: 30px;
 }
 
 .creator-card {
