@@ -201,9 +201,61 @@
     <section id="plan-trip">
       <h2>Plan a trip IA</h2>
     </section>
-    <section id="weather">
-      <h2>Weather</h2>
-    </section>
+   <section id="weather">
+
+  <div class="weather-header">
+    <p class="weather-tag">REAL-TIME FORECAST</p>
+    <h2>Weather</h2>
+    <p class="weather-description">Check the current weather and 5-day forecast for any destination.</p>
+  </div>
+
+  <div class="weather-search">
+    <input type="text" id="weather-input" placeholder="Enter a city... (e.g. Tokyo, Paris, New York)" />
+    <button id="weather-btn">Search 🔍</button>
+  </div>
+
+  <div id="weather-error" class="weather-error"></div>
+
+  <!-- CURRENT WEATHER -->
+  <div id="weather-current" class="weather-current hidden">
+    <div class="weather-main-card">
+      <div class="weather-left">
+        <p id="w-city" class="w-city"></p>
+        <p id="w-date" class="w-date"></p>
+        <p id="w-desc" class="w-desc"></p>
+        <div class="w-temp-row">
+          <span id="w-temp" class="w-temp"></span>
+          <img id="w-icon" class="w-icon" src="" alt="weather icon" />
+        </div>
+      </div>
+      <div class="weather-right">
+        <div class="weather-detail">
+          <span class="detail-label">Feels like</span>
+          <span id="w-feels" class="detail-value"></span>
+        </div>
+        <div class="weather-detail">
+          <span class="detail-label">Humidity</span>
+          <span id="w-humidity" class="detail-value"></span>
+        </div>
+        <div class="weather-detail">
+          <span class="detail-label">Wind</span>
+          <span id="w-wind" class="detail-value"></span>
+        </div>
+        <div class="weather-detail">
+          <span class="detail-label">Min / Max</span>
+          <span id="w-minmax" class="detail-value"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5-DAY FORECAST -->
+  <div id="weather-forecast" class="weather-forecast hidden">
+    <h3>5-Day Forecast</h3>
+    <div id="forecast-cards" class="forecast-cards"></div>
+  </div>
+
+</section>
     <section id="about-us">
 
   <div class="about-header">
