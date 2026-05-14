@@ -46,7 +46,7 @@ const creatorsInfo = {
     text: `
       Ariadna is passionate about web design and user experiences.
       She enjoys creating clean and modern interfaces that make
-      travel planning easier and more enjoyable.
+      travel planning easier and more enjoyable. She loves exploring new destinations and sharing her travel tips with others.
     `
   },
 
@@ -57,10 +57,9 @@ const creatorsInfo = {
     text: `
       Irene focuses on frontend development and interactive design.
       She loves creating dynamic websites and digital experiences
-      with a modern and intuitive style.
+      with a modern and intuitive style. She is also an avid traveler and enjoys sharing her adventures through her work.
     `
   }
-
 };
 
 creatorCards.forEach(card => {
