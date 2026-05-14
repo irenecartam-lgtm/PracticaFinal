@@ -265,10 +265,10 @@ section:not(.home) {
   display: flex;
   gap: 20px;
   transition: transform 0.6s ease-in-out;
-  will-change: transform;
+  /* will-change: transform; */
   padding: 10px 0 40px;
   align-items: flex-start;
-}
+} 
 
 .card {
   flex: 0 0 calc((100cqw - 220px) / 4);  /* NO uses % — usa cqw */
