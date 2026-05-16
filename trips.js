@@ -186,3 +186,4 @@ tripForm.addEventListener("submit", (e) => {
 });
 
 renderTrips();
+
