@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.chat-page {
+  background-image: url("https://img.freepik.com/fotos-premium/mapa-mundo-gris-simple-adecuado-conceptos-viaje-muestra-conexiones-globales-minimalista-moderno_1299716-23592.jpg?semt=ais_hybrid&w=740&q=80");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.chat-main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  padding: 40px 5%;
+  height: calc(100vh - 80px);
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* SIDEBAR */
+
+.chat-sidebar {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+
+.chat-sidebar h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.chat-subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+#clear-chat-btn {
+  padding: 12px 20px;
+  border: 2px solid black;
+  border-radius: 30px;
+  background: transparent;
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#clear-chat-btn:hover {
+  background: crimson;
+  color: white;
+  border-color: crimson;
+}
+
+.chat-tips {
+  background: rgba(255, 166, 82, 0.15);
+  border-radius: 20px;
+  padding: 20px;
+  border: 2px solid rgba(255, 166, 82, 0.4);
+}
+
+.tips-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.chat-tips ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-tips ul li {
+  font-size: 0.85rem;
+  color: #555;
+  padding-left: 10px;
+  border-left: 3px solid rgb(255, 166, 82);
+  line-height: 1.5;
+}
+
+/* CHAT AREA */
+
+.chat-area {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+#messages {
+  list-style: none;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 8px;
+  margin-bottom: 20px;
+}
+
+#messages li {
+  max-width: 70%;
+  padding: 14px 20px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+#messages li.user {
+  background: rgb(255, 166, 82);
+  color: black;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+  font-weight: 500;
+}
+
+#messages li.gpt {
+  background: #f0f0f0;
+  color: black;
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+}
+
+#messages li.typing {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* FORMULARIO */
+
+#form {
+  display: flex;
+  gap: 12px;
+}
+
+#input {
+  flex: 1;
+  padding: 14px 20px;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 30px;
+  font-family: "Figtree", sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  background: white;
+}
+
+#input:focus {
+  border-color: rgb(255, 166, 82);
+}
+
+#form button {
+  padding: 14px 28px;
+  border: 2px solid black;
+  border-radius: 30px;
+  background: rgb(255, 166, 82);
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#form button:hover {
+  background: rgb(250, 119, 4);
+}
+
+.active-nav {
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.chat-tips ul li {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.chat-tips ul li:hover {
+  border-left: 3px solid rgb(250, 119, 4);
+  color: black;
+  font-weight: 600;
+}
