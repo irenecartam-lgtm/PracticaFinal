@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TripPlan+ · AI Trip Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="chat.css" />
+</head>
+
+<body class="chat-page">
+
+  <header>
+    <h1>TripPlan+</h1>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#popular">Most Popular</a></li>
+        <li><a href="chat.html" class="active-nav">Plan a trip IA</a></li>
+        <li><a href="index.html#weather">Weather</a></li>
+        <li><a href="index.html#about-us">About us</a></li>
+      </ul>
+    </nav>
+    <nav id="nav-login" class="nav">
+      <button class="login">Login to My trips</button>
+    </nav>
+  </header>
+
+  <main class="chat-main">
+
+    <!-- SIDEBAR -->
+    <div class="chat-sidebar">
+      <h2>AI Trip Planner</h2>
+      <p class="chat-subtitle">Ask me anything about your next trip!</p>
+      <!-- <button id="clear-chat-btn">🗑 Clear conversation</button> -->
+      <div class="chat-tips">
+        <p class="tips-title">Try asking:</p>
+        <ul>
+          <li class="tip-item">Best places to visit in Japan in spring</li>
+          <li class="tip-item">7-day itinerary for Barcelona</li>
+          <li class="tip-item">Budget travel tips for Southeast Asia</li>
+          <li class="tip-item">What to pack for a trip to Iceland</li>
+        </ul>
+      </div>
+    </div> <!-- ← cierra chat-sidebar aquí -->
+
+    <!-- CHAT AREA — fuera del sidebar, al mismo nivel -->
+    <div class="chat-area">
+      <ul id="messages"></ul>
+      <form id="form">
+        <input id="input" name="textUsuario" autocomplete="off"
+          placeholder="Ask me about destinations, itineraries, tips..." />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+  </main>
+
+  <script src="chat.js"></script>
+</body>
+
+</html>
