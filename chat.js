@@ -66,7 +66,7 @@ async function llamaAChatGPT(texto) {
 
   // Ejemplo de fetch POST con cabeceras
   const url =
-    "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent";
+    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
   const datos = {
     contents: [
       {
@@ -106,4 +106,13 @@ tips.forEach((tip) => {
     input.value = tip.innerText;
     input.focus();
   });
+});
+
+ /* ───────── VENTANA BACK ───────── */
+const goBackBtn = document.getElementById("back-btn");
+
+goBackBtn.addEventListener("click", () => {
+
+  window.location.href = "index.html#plan-trip";
+
 });
