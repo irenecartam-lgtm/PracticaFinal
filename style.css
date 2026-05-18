@@ -175,8 +175,10 @@ nav ul li a:hover {
 .home-image {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 220px 220px;
+  /* Cambiado de 220px a unidades relativas al ancho de la pantalla (Viewport Width) */
+  grid-template-rows: 15vw 15vw; 
   gap: 20px;
+  width: 100%;
 }
 
 .home-image img {
@@ -199,7 +201,7 @@ nav ul li a:hover {
 /* RESTO DE SECCIONES */
 
 section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 90px;
 }
 
 section:not(.home) {
@@ -541,13 +543,9 @@ section:not(.home) {
 /* ───────── MY TRIPS GRID ───────── */
 
 #trip-list {
-
   display: grid;
-
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-
   gap: 25px;
-
   margin-top: 30px;
 
 }
@@ -555,55 +553,33 @@ section:not(.home) {
 /* ───────── MINI TRIP CARD ───────── */
 
 .trip-mini-card {
-
   background: white;
-
   border-radius: 25px;
-
   padding: 25px;
-
   min-height: 180px;
-
   cursor: pointer;
-
   transition: all 0.3s ease;
-
   border: 2px solid transparent;
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-
   display: flex;
-
   flex-direction: column;
-
   justify-content: center;
-
 }
 
 .trip-mini-card:hover {
-
   transform: translateY(-10px);
-
   border-color: rgb(255, 166, 82);
-
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-
 }
 
 .trip-mini-card h3 {
-
   font-size: 1.7rem;
-
   margin-bottom: 15px;
-
 }
 
 .trip-mini-card p {
-
   color: #666;
-
   line-height: 1.7;
-
 }
 
 /* ───────── MODAL ───────── */
@@ -1126,6 +1102,7 @@ footer {
   padding: 40px;
   border: 2px solid rgb(255, 166, 82);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  scroll-margin-top: 100px;
 }
 
 .about-contact h3 {
@@ -1210,10 +1187,13 @@ footer {
 
 /* PLAN TRIP */
 #plan-trip {
-  padding: 100px 5%;
+  min-height: 100vh; /* Ocupa el 100% de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  padding: 40px 5%;
   max-width: 1000px;
   margin: 0 auto;
-
 }
 
 .plan-header {
@@ -1265,7 +1245,11 @@ footer {
 ══════════════════════════════════════ */
 
 #weather {
-  padding: 100px 5%;
+  min-height: 100vh; /* Ocupa el 100% de la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el contenido verticalmente */
+  padding: 40px 5%;
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -1489,6 +1473,45 @@ footer {
 
 @media(max-width: 900px) {
 
+  /* Adaptación de la Sección HOME */
+  .home {
+    padding: 40px 5%;
+    min-height: auto; /* Permite que la sección crezca verticalmente en móvil si es necesario */
+  }
+
+  .home-content {
+    grid-template-columns: 1fr; /* Pasa a tener 1 sola columna (texto arriba, fotos abajo) */
+    gap: 40px;
+    text-align: center; /* Centra el texto para un look más limpio en móvil */
+  }
+
+  .home-text {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .home-text h2 {
+    font-size: 3rem; /* Encogemos un poco el título principal para que no se desborde */
+  }
+
+  .home-description {
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .home-buttons {
+    justify-content: center; /* Centra los botones en pantallas pequeñas */
+  }
+
+  .home-image {
+    /* Al estar en una sola columna, aumentamos un poco el tamaño relativo de las fotos en móvil */
+    grid-template-rows: 30vw 30vw; 
+    max-width: 500px;
+    margin: 0 auto; /* Centra el bloque de fotos */
+  }
+
+
+  /* Reglas que ya tenías para TRIPS PAGE */
   .trip-hero {
     grid-template-columns: 1fr;
   }
