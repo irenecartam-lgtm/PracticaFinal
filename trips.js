@@ -1,22 +1,155 @@
 const tripForm = document.getElementById("trip-form");
 const tripList = document.getElementById("trip-list");
 
+// Recuperamos los viajes guardados en localStorage
+// Si no hay ninguno, usamos un array vacío
 let trips = JSON.parse(localStorage.getItem("trips")) || [];
 
+
+// ─────────────────────────────────────────────
+// FUNCIÓN PARA GUARDAR LOS VIAJES EN LOCALSTORAGE
+// ─────────────────────────────────────────────
 function saveTrips() {
+
   localStorage.setItem("trips", JSON.stringify(trips));
+
 }
 
+
+// ─────────────────────────────────────────────
+// FUNCIÓN PARA VALIDAR LAS FECHAS
+// ─────────────────────────────────────────────
+function validarFechas(fechaInicio, fechaFin) {
+
+  // Convertimos los strings en objetos Date
+  const inicio = new Date(fechaInicio);
+
+  const fin = new Date(fechaFin);
+
+  const hoy = new Date();
+
+
+  // ───────── AÑOS ─────────
+  const añoInicio = inicio.getFullYear();
+
+  const añoFin = fin.getFullYear();
+
+  const añoHoy = hoy.getFullYear();
+
+
+  // ───────── MESES ─────────
+  // getMonth() devuelve de 0 a 11
+  // Por eso sumamos +1
+  const mesInicio = inicio.getMonth() + 1;
+
+  const mesFin = fin.getMonth() + 1;
+
+  const mesHoy = hoy.getMonth() + 1;
+
+
+  // ───────── DÍAS ─────────
+  const diaInicio = inicio.getDate();
+
+  const diaFin = fin.getDate();
+
+  const diaHoy = hoy.getDate();
+
+
+  // ─────────────────────────────────────────────
+  // COMPROBAR SI LA FECHA DE INICIO ES ANTERIOR A HOY
+  // ─────────────────────────────────────────────
+
+  // Primero miramos el año
+  if (añoInicio < añoHoy) {
+
+    return "The start date cannot be in the past.";
+
+  }
+
+  // Si el año es igual
+  else if (añoInicio === añoHoy) {
+
+    // Miramos el mes
+    if (mesInicio < mesHoy) {
+
+      return "The start date cannot be in the past.";
+
+    }
+
+    // Si el mes también es igual
+    else if (mesInicio === mesHoy) {
+
+      // Miramos el día
+      if (diaInicio < diaHoy) {
+
+        return "The start date cannot be in the past.";
+
+      }
+
+    }
+
+  }
+
+
+  // ─────────────────────────────────────────────
+  // COMPROBAR SI LA FECHA FINAL ES ANTERIOR
+  // A LA FECHA DE INICIO
+  // ─────────────────────────────────────────────
+
+  // Primero comprobamos el año
+  if (añoFin < añoInicio) {
+
+    return "The end date cannot be before the start date.";
+
+  }
+
+  // Si el año es igual
+  else if (añoFin === añoInicio) {
+
+    // Comprobamos el mes
+    if (mesFin < mesInicio) {
+
+      return "The end date cannot be before the start date.";
+
+    }
+
+    // Si el mes también es igual
+    else if (mesFin === mesInicio) {
+
+      // Comprobamos el día
+      if (diaFin < diaInicio) {
+
+        return "The end date cannot be before the start date.";
+
+      }
+
+    }
+
+  }
+
+  // Si no hay errores devolvemos null
+  return null;
+
+}
+
+
+// ─────────────────────────────────────────────
+// FUNCIÓN PARA MOSTRAR LOS VIAJES EN PANTALLA
+// ─────────────────────────────────────────────
 function renderTrips() {
 
+  // Limpiamos el contenedor
   tripList.innerHTML = "";
 
+  // Recorremos todos los viajes
   trips.forEach((trip, index) => {
 
+    // Creamos la card
     const card = document.createElement("div");
 
     card.classList.add("trip-mini-card");
 
+    // HTML interno de la card
     card.innerHTML = `
 
       <div class="trip-preview">
@@ -93,12 +226,20 @@ function renderTrips() {
 
     `;
 
+
+    // ─────────────────────────────────────────────
+    // ABRIR Y CERRAR LA CARD
+    // ─────────────────────────────────────────────
     card.addEventListener("click", () => {
 
       card.classList.toggle("active");
 
     });
 
+
+    // ─────────────────────────────────────────────
+    // MOSTRAR FORMULARIO DE ACTIVIDADES
+    // ─────────────────────────────────────────────
     const addBtn = card.querySelector(".add-activity-btn");
 
     const activityForm = card.querySelector(".activity-form");
@@ -111,12 +252,17 @@ function renderTrips() {
 
     });
 
+
+    // ─────────────────────────────────────────────
+    // GUARDAR ACTIVIDAD
+    // ─────────────────────────────────────────────
     activityForm.addEventListener("submit", (e) => {
 
       e.preventDefault();
 
       e.stopPropagation();
 
+      // Creamos la actividad
       const activity = {
 
         title: activityForm.querySelector(".activity-title").value,
@@ -127,63 +273,116 @@ function renderTrips() {
 
       };
 
+      // Añadimos actividad al viaje
       trip.activities.push(activity);
 
+      // Guardamos
       saveTrips();
 
+      // Volvemos a renderizar
       renderTrips();
 
     });
 
+
+    // ─────────────────────────────────────────────
+    // ELIMINAR VIAJE
+    // ─────────────────────────────────────────────
     const deleteBtn = card.querySelector(".delete-btn");
 
     deleteBtn.addEventListener("click", (e) => {
 
       e.stopPropagation();
 
+      // Eliminamos el viaje
       trips.splice(index, 1);
 
+      // Guardamos cambios
       saveTrips();
 
+      // Actualizamos pantalla
       renderTrips();
 
     });
 
+
+    // Añadimos la card al contenedor
     tripList.appendChild(card);
 
   });
 
 }
 
+
+// ─────────────────────────────────────────────
+// SUBMIT DEL FORMULARIO PRINCIPAL
+// ─────────────────────────────────────────────
 tripForm.addEventListener("submit", (e) => {
 
+  // Evitamos que se recargue la página
   e.preventDefault();
 
-  const newTrip = {
 
-    name: document.getElementById("trip-name").value,
+  // Guardamos las fechas
+  const startDate = document.getElementById("trip-start").value;
 
-    origin: document.getElementById("trip-origin").value,
+  const endDate = document.getElementById("trip-end").value;
 
-    destination: document.getElementById("trip-destination").value,
 
-    start: document.getElementById("trip-start").value,
+  // Validamos las fechas
+  const errorFechas = validarFechas(startDate, endDate);
 
-    end: document.getElementById("trip-end").value,
 
-    activities: []
+  // SI HAY ERROR
+  if (errorFechas !== null) {
 
-  };
+    // Mostramos el error
+    alert(errorFechas);
 
-  trips.push(newTrip);
+  }
 
-  saveTrips();
+  // SI TODO ESTÁ BIEN
+  else {
 
-  renderTrips();
+    // Creamos el nuevo viaje
+    const newTrip = {
 
-  tripForm.reset();
+      name: document.getElementById("trip-name").value,
+
+      origin: document.getElementById("trip-origin").value,
+
+      destination: document.getElementById("trip-destination").value,
+
+      start: startDate,
+
+      end: endDate,
+
+      activities: []
+
+    };
+
+
+    // Añadimos el viaje al array
+    trips.push(newTrip);
+
+
+    // Guardamos en localStorage
+    saveTrips();
+
+
+    // Actualizamos la pantalla
+    renderTrips();
+
+
+    // Limpiamos el formulario
+    tripForm.reset();
+
+  }
 
 });
 
-renderTrips();
 
+// ─────────────────────────────────────────────
+// MOSTRAR VIAJES AL CARGAR LA PÁGINA
+// ─────────────────────────────────────────────
+renderTrips();
