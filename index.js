@@ -98,7 +98,7 @@ creatorCards.forEach(card => {
     const feedback = document.getElementById('contact-feedback');
 
     if (!name || !email || !message) {
-      feedback.textContent = '⚠️ Please fill in name, email and message.';
+      feedback.textContent = 'Please fill in name, email and message.';
       feedback.style.color = '#e74c3c';
       return;
     }
@@ -137,7 +137,7 @@ creatorCards.forEach(card => {
       ]);
 
       if (res1.ok && res2.ok) {
-        feedback.textContent = `✅ Thanks ${name}! We've received your message and will get back to you as soon as possible.`;
+        feedback.textContent = `Thanks ${name}! We've received your message and will get back to you as soon as possible.`;
         feedback.style.color = '#27ae60';
         document.getElementById('contact-name').value    = '';
         document.getElementById('contact-surname').value = '';
@@ -147,7 +147,7 @@ creatorCards.forEach(card => {
         throw new Error('EmailJS error');
       }
     } catch (err) {
-      feedback.textContent = '❌ Something went wrong. Please try again later.';
+      feedback.textContent = 'Something went wrong. Please try again later.';
       feedback.style.color = '#e74c3c';
       console.error(err);
     }
@@ -171,7 +171,7 @@ creatorCards.forEach(card => {
     errorEl.textContent = '';
 
     if (!city) {
-      errorEl.textContent = '⚠️ Please enter a city name.';
+      errorEl.textContent = 'Please enter a city name.';
       return;
     }
 
@@ -182,7 +182,7 @@ creatorCards.forEach(card => {
       );
 
       if (!res.ok) {
-        errorEl.textContent = '❌ City not found. Please check the name and try again.';
+        errorEl.textContent = 'City not found. Please check the name and try again.';
         document.getElementById('weather-current').classList.add('hidden');
         document.getElementById('weather-forecast').classList.add('hidden');
         return;
@@ -199,7 +199,7 @@ creatorCards.forEach(card => {
       renderForecast(forecastData);
 
     } catch (err) {
-      errorEl.textContent = '❌ Something went wrong. Please try again.';
+      errorEl.textContent = 'Something went wrong. Please try again.';
       console.error(err);
     }
   }
@@ -249,3 +249,12 @@ creatorCards.forEach(card => {
     document.getElementById('weather-forecast').classList.remove('hidden');
   }
 
+
+  /* ───────── VENTANA IA ───────── */
+const planTripBtn = document.getElementById("plan-trip-btn");
+
+planTripBtn.addEventListener("click", () => {
+
+  window.location.href = "chat.html";
+
+});
