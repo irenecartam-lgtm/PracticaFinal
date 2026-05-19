@@ -4,7 +4,7 @@ const prevBtn = document.getElementById("prev");
 
 function getCardWidth() {
   const card = document.querySelector(".card");
-  return card.offsetWidth + 20; // ancho + gap (igual que en CSS)
+  return card.offsetWidth + 20; 
 }
 
 nextBtn.addEventListener("click", () => {
@@ -88,7 +88,7 @@ creatorCards.forEach(card => {
 
 });
 document.getElementById('contact-form').addEventListener('submit', async (e) => {
-  e.preventDefault(); // Evita que el navegador recargue la página
+  e.preventDefault(); 
 
   const name     = document.getElementById('contact-name').value.trim();
   const surname  = document.getElementById('contact-surname').value.trim();
@@ -97,8 +97,6 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
   const btn      = document.getElementById('contact-submit');
   const feedback = document.getElementById('contact-feedback');
 
-  // La validación de email y required ya la hace el navegador por el <form>,
-  // pero dejamos esta comprobación como seguridad extra en JS
   if (!name || !email || !message) {
     feedback.textContent = 'Please fill in name, email and message.';
     feedback.style.color = '#e74c3c';
