@@ -16,3 +16,5 @@ Como estructura generar del índice principal, el Header continene todo los boto
 
 
 Posibles mejoras:
+
+Conclusiones:
