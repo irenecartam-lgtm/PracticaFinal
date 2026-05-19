@@ -452,9 +452,10 @@ section:not(.home) {
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
+  border: 2px solid black;
 }
 
-.trip-save-btn:hover {
+.trip-save-btn:hover, #back-btn:hover {
   background-color: rgb(250, 119, 4);
 }
 
@@ -750,19 +751,12 @@ section:not(.home) {
 .delete-btn {
 
   margin-top: 30px;
-
   padding: 14px 20px;
-
   border: none;
-
   border-radius: 15px;
-
   background: crimson;
-
   color: white;
-
   font-weight: 700;
-
   cursor: pointer;
 
 }
@@ -802,23 +796,16 @@ section:not(.home) {
 }
 
 .trip-mini-card:hover {
-
   transform: translateY(-8px);
-
 }
 
 .trip-preview h3 {
-
   font-size: 1.6rem;
-
   margin-bottom: 10px;
-
 }
 
 .trip-preview p {
-
   color: #666;
-
 }
 
 /* ───────── DETAILS ───────── */
@@ -836,6 +823,22 @@ section:not(.home) {
 }
 
 /* ───────── BUTTONS ───────── */
+
+#back-btn {
+  display: block;
+  margin: 10px auto 10px 0;
+  width: 100%;
+  padding: 14px 28px;
+  border: 2px solid black;
+  border-radius: 30px;
+  background-color: rgb(255, 166, 82);
+  font-family: "Figtree", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  
+}
 
 .add-activity-btn,
 .delete-btn {
