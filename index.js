@@ -162,3 +162,15 @@ planTripBtn.addEventListener("click", () => {
   window.location.href = "chat.html";
 
 });
+
+  /* ───────── MENU TOGGLE ───────── */
+
+const menuToggle = document.getElementById("menu-toggle");
+
+const mobileNav = document.getElementById("mobile-nav");
+
+menuToggle.addEventListener("click", function () {
+
+  mobileNav.classList.toggle("active");
+
+});
