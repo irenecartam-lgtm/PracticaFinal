@@ -21,113 +21,20 @@ function saveTrips() {
 // ─────────────────────────────────────────────
 function validarFechas(fechaInicio, fechaFin) {
 
-  // Convertimos los strings en objetos Date
   const inicio = new Date(fechaInicio);
-
   const fin = new Date(fechaFin);
-
   const hoy = new Date();
 
-
-  // ───────── AÑOS ─────────
-  const añoInicio = inicio.getFullYear();
-
-  const añoFin = fin.getFullYear();
-
-  const añoHoy = hoy.getFullYear();
-
-
-  // ───────── MESES ─────────
-  // getMonth() devuelve de 0 a 11
-  // Por eso sumamos +1
-  const mesInicio = inicio.getMonth() + 1;
-
-  const mesFin = fin.getMonth() + 1;
-
-  const mesHoy = hoy.getMonth() + 1;
-
-
-  // ───────── DÍAS ─────────
-  const diaInicio = inicio.getDate();
-
-  const diaFin = fin.getDate();
-
-  const diaHoy = hoy.getDate();
-
-
-  // ─────────────────────────────────────────────
-  // COMPROBAR SI LA FECHA DE INICIO ES ANTERIOR A HOY
-  // ─────────────────────────────────────────────
-
-  // Primero miramos el año
-  if (añoInicio < añoHoy) {
-
+  // Validar que la fecha de inicio no sea en el pasado
+  if (inicio < hoy) {
     return "The start date cannot be in the past.";
-
   }
 
-  // Si el año es igual
-  else if (añoInicio === añoHoy) {
-
-    // Miramos el mes
-    if (mesInicio < mesHoy) {
-
-      return "The start date cannot be in the past.";
-
-    }
-
-    // Si el mes también es igual
-    else if (mesInicio === mesHoy) {
-
-      // Miramos el día
-      if (diaInicio < diaHoy) {
-
-        return "The start date cannot be in the past.";
-
-      }
-
-    }
-
-  }
-
-
-  // ─────────────────────────────────────────────
-  // COMPROBAR SI LA FECHA FINAL ES ANTERIOR
-  // A LA FECHA DE INICIO
-  // ─────────────────────────────────────────────
-
-  // Primero comprobamos el año
-  if (añoFin < añoInicio) {
-
+  // Validar que la fecha final no sea antes que la inicial
+  if (fin < inicio) {
     return "The end date cannot be before the start date.";
-
   }
 
-  // Si el año es igual
-  else if (añoFin === añoInicio) {
-
-    // Comprobamos el mes
-    if (mesFin < mesInicio) {
-
-      return "The end date cannot be before the start date.";
-
-    }
-
-    // Si el mes también es igual
-    else if (mesFin === mesInicio) {
-
-      // Comprobamos el día
-      if (diaFin < diaInicio) {
-
-        return "The end date cannot be before the start date.";
-
-      }
-
-    }
-
-  }
-
-  // Si no hay errores devolvemos null
   return null;
 
 }
@@ -386,3 +293,5 @@ tripForm.addEventListener("submit", (e) => {
 // MOSTRAR VIAJES AL CARGAR LA PÁGINA
 // ─────────────────────────────────────────────
 renderTrips();
+
+

@@ -49,7 +49,7 @@ form.addEventListener("submit", async (event) => {
 
 // Función asíncrona optimizada y protegida contra errores
 async function llamaAChatGPT(texto) {
-  const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+  const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent";
   
   const datos = {
     contents: [
