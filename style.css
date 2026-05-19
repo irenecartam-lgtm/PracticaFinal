@@ -1013,55 +1013,34 @@ footer {
 .creator-card {
 
   width: 320px;
-
   background: rgba(255, 255, 255, 0.92);
-
   backdrop-filter: blur(5px);
-
   border-radius: 30px;
-
   overflow: hidden;
-
   cursor: pointer;
-
   transition: 0.3s;
-
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-
   border: 3px solid transparent;
-
 }
 
 .creator-card:hover {
-
   transform: translateY(-10px);
-
 }
 
 .creator-card.active {
-
   border-color: rgb(255, 166, 82);
-
 }
 
 .creator-card img {
-
   width: 100%;
-
   height: 380px;
-
   object-fit: cover;
-
 }
 
 .creator-card h3 {
-
   padding: 25px;
-
   text-align: center;
-
   font-size: 1.8rem;
-
 }
 
 /* DESCRIPTION */
@@ -1069,19 +1048,12 @@ footer {
 .creator-description {
 
   max-width: 700px;
-
   margin: auto;
-
   background: rgba(255, 255, 255, 0.92);
-
   backdrop-filter: blur(5px);
-
   padding: 30px;
-
   border-radius: 30px;
-
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-
   text-align: center;
 
 }
@@ -1190,10 +1162,10 @@ footer {
 
 /* PLAN TRIP */
 #plan-trip {
-  min-height: 100vh; /* Ocupa el 100% de la pantalla */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra el contenido verticalmente */
+  justify-content: center; 
   padding: 40px 5%;
   max-width: 1000px;
   margin: 0 auto;
@@ -1251,7 +1223,7 @@ footer {
   min-height: 100vh; /* Ocupa el 100% de la pantalla */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra el contenido verticalmente */
+  justify-content: center; 
   padding: 40px 5%;
   max-width: 1000px;
   margin: 0 auto;
@@ -1479,13 +1451,9 @@ footer {
 .menu-toggle {
 
   display: none;
-
   background: none;
-
   border: none;
-
   font-size: 2rem;
-
   cursor: pointer;
 
 }
@@ -1495,55 +1463,36 @@ footer {
 @media (max-width: 900px) {
 
   header {
-
     position: relative;
-
     padding: 20px;
-
   }
 
   .menu-toggle {
-
     display: block;
-
   }
 
   .nav ul {
-
     flex-direction: column;
-
     gap: 20px;
-
   }
 
   #mobile-nav {
 
     position: absolute;
-
     top: 90px;
-
     left: 0;
-
     width: 100%;
-
     background: rgba(255, 166, 82, 0.98);
-
     padding: 30px;
-
     display: none;
-
   }
 
   #mobile-nav.active {
-
     display: block;
-
   }
 
   #nav-login {
-
     display: none;
-
   }
 
 }
@@ -1560,7 +1509,7 @@ footer {
   .home-content {
     grid-template-columns: 1fr; /* Pasa a tener 1 sola columna (texto arriba, fotos abajo) */
     gap: 40px;
-    text-align: center; /* Centra el texto para un look más limpio en móvil */
+    text-align: center; 
   }
 
   .home-text {
@@ -1569,7 +1518,7 @@ footer {
   }
 
   .home-text h2 {
-    font-size: 3rem; /* Encogemos un poco el título principal para que no se desborde */
+    font-size: 3rem; 
   }
 
   .home-description {
@@ -1578,7 +1527,7 @@ footer {
   }
 
   .home-buttons {
-    justify-content: center; /* Centra los botones en pantallas pequeñas */
+    justify-content: center; 
   }
 
   .home-image {
@@ -1588,8 +1537,6 @@ footer {
     margin: 0 auto; /* Centra el bloque de fotos */
   }
 
-
-  /* Reglas que ya tenías para TRIPS PAGE */
   .trip-hero {
     grid-template-columns: 1fr;
   }
