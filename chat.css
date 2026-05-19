@@ -238,3 +238,82 @@ html {
   color: white;
   border-color: black;
 }
+
+/* ───────── HAMBURGER MENU ───────── */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ───────── MOBILE MENU ───────── */
+
+@media (max-width: 900px) {
+
+  header {
+    position: relative;
+    padding: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav ul {
+    gap: 15px;
+  }
+
+  .nav:not(#nav-login) {
+    display: none;
+  }
+
+  #nav-login {
+    display: none;
+  }
+
+  #mobile-nav {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 166, 82, 0.98);
+    padding: 30px;
+    display: none;
+    z-index: 100;
+  }
+
+  #mobile-nav.active {
+    display: block;
+  }
+
+  #mobile-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #mobile-nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .chat-main {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .chat-sidebar {
+    order: 2;
+  }
+
+  .chat-area {
+    min-height: 70vh;
+  }
+
+}
