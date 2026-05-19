@@ -174,3 +174,98 @@ menuToggle.addEventListener("click", function () {
   mobileNav.classList.toggle("active");
 
 });
+
+
+
+  /* ───────── WEATHER ───────── */
+
+const API_KEY = '6757199e74ac9488dc56336a2c22645a';
+
+  document.getElementById('weather-btn').addEventListener('click', fetchWeather);
+  document.getElementById('weather-input').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') fetchWeather();
+  });
+
+  async function fetchWeather() {
+    const city = document.getElementById('weather-input').value.trim();
+    const errorEl = document.getElementById('weather-error');
+    errorEl.textContent = '';
+
+    if (!city) {
+      errorEl.textContent = '⚠️ Please enter a city name.';
+      return;
+    }
+
+    try {
+      
+      const res = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric&lang=en`
+      );
+
+      if (!res.ok) {
+        errorEl.textContent = '❌ City not found. Please check the name and try again.';
+        document.getElementById('weather-current').classList.add('hidden');
+        document.getElementById('weather-forecast').classList.add('hidden');
+        return;
+      }
+
+      const data = await res.json();
+      renderCurrent(data);
+
+      
+      const resForecast = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric&lang=en`
+      );
+      const forecastData = await resForecast.json();
+      renderForecast(forecastData);
+
+    } catch (err) {
+      errorEl.textContent = '❌ Something went wrong. Please try again.';
+      console.error(err);
+    }
+  }
+
+  function renderCurrent(data) {
+    const date = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+    document.getElementById('w-city').textContent    = `${data.name}, ${data.sys.country}`;
+    document.getElementById('w-date').textContent    = date.toLocaleDateString('en-GB', options);
+    document.getElementById('w-desc').textContent    = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
+    document.getElementById('w-temp').textContent    = `${Math.round(data.main.temp)}°C`;
+    document.getElementById('w-icon').src            = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    document.getElementById('w-feels').textContent   = `${Math.round(data.main.feels_like)}°C`;
+    document.getElementById('w-humidity').textContent = `${data.main.humidity}%`;
+    document.getElementById('w-wind').textContent    = `${Math.round(data.wind.speed * 3.6)} km/h`;
+    document.getElementById('w-minmax').textContent  = `${Math.round(data.main.temp_min)}° / ${Math.round(data.main.temp_max)}°C`;
+
+    document.getElementById('weather-current').classList.remove('hidden');
+  }
+
+  function renderForecast(data) {
+    const container = document.getElementById('forecast-cards');
+    container.innerHTML = '';
+
+    
+    const days = data.list.filter(item => item.dt_txt.includes('12:00:00')).slice(0, 5);
+
+    days.forEach(day => {
+      const date = new Date(day.dt * 1000);
+      const dayName = date.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+      const icon = `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`;
+      const desc = day.weather[0].description.charAt(0).toUpperCase() + day.weather[0].description.slice(1);
+
+      const card = document.createElement('div');
+      card.className = 'forecast-card';
+      card.innerHTML = `
+        <p class="forecast-day">${dayName}</p>
+        <img src="${icon}" alt="${desc}" />
+        <p class="forecast-desc">${desc}</p>
+        <p class="forecast-temp">${Math.round(day.main.temp)}°C</p>
+        <p class="forecast-minmax">${Math.round(day.main.temp_min)}° / ${Math.round(day.main.temp_max)}°C</p>
+      `;
+      container.appendChild(card);
+    });
+
+    document.getElementById('weather-forecast').classList.remove('hidden');
+  }
