@@ -161,6 +161,18 @@ function renderTrips() {
 
 
     // ─────────────────────────────────────────────
+    // PARAR PROPAGACIÓN EN EL FORM Y TODOS SUS ELEMENTOS
+    // El click en cualquier parte del form (inputs, botón submit,
+    // espacio vacío) no debe llegar a la card y cerrarla
+    // ─────────────────────────────────────────────
+    activityForm.addEventListener("click", (e) => {
+
+      e.stopPropagation();
+
+    });
+
+
+    // ─────────────────────────────────────────────
     // GUARDAR ACTIVIDAD
     // ─────────────────────────────────────────────
     activityForm.addEventListener("submit", (e) => {
@@ -293,5 +305,6 @@ tripForm.addEventListener("submit", (e) => {
 // MOSTRAR VIAJES AL CARGAR LA PÁGINA
 // ─────────────────────────────────────────────
 renderTrips();
+
 
 
