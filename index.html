@@ -29,7 +29,7 @@
     </nav>
 
     <nav id="nav-login" class="nav">
-      <a href ="#contact"><button class="contact">Contact Us</button></a>
+      <a href="#contact"><button class="contact">Contact Us</button></a>
     </nav>
   </header>
   <main>
@@ -53,9 +53,9 @@
           <div class="home-buttons">
             <a href="trips.html">
               <button id="primary-button">Start planning</button>
-            </a >
+            </a>
             <a href="#popular">
-            <button id="secondary-button">Explore trips</button>
+              <button id="secondary-button">Explore trips</button>
             </a>
           </div>
         </div>
@@ -64,12 +64,9 @@
         <div class="home-image">
           <img src="./assets/home_foto2.jpg" alt="Playa" />
 
-          <img
-            src="./assets/home_foto1.jpg"
-            alt="Desierto" />
+          <img src="./assets/home_foto1.jpg" alt="Desierto" />
 
-          <img src="./assets/home_foto3.jpg"
-            alt="Costa de Italia" />
+          <img src="./assets/home_foto3.jpg" alt="Costa de Italia" />
 
         </div>
       </div>
@@ -80,7 +77,8 @@
 
       <div class="popular-header">
         <h2>Popular Destinations</h2>
-        <p class="popular-description">Discover the most popular travel destinations around the world and get inspired for your next trip.</p>
+        <p class="popular-description">Discover the most popular travel destinations around the world and get inspired
+          for your next trip.</p>
       </div>
 
       <div class="carousel">
@@ -97,9 +95,7 @@
 
             <div class="card">
               <div class="destination-card">
-                <img
-                  src="./assets/coliseo.webp"
-                  alt="Colosseum" />
+                <img src="./assets/coliseo.webp" alt="Colosseum" />
               </div>
               <div class="place">
                 <h3 id>Rome, Italy</h3>
@@ -207,9 +203,9 @@
         <h2>Plan a trip IA</h2>
         <p class="plan-description">Get personalized trip recommendations, itineraries and travel tips with our AI
           assistant.</p>
-        </div>
-        
-        <button id="plan-trip-btn">Start planning your trip with AI</button>
+      </div>
+
+      <button id="plan-trip-btn">Start planning your trip with AI</button>
     </section>
 
 
@@ -325,34 +321,54 @@
     <!-- CONTACT FORM -->
 
     <section id="contact">
-    
-      <div class="about-contact">
-        <h3>Get in Touch</h3>
-        <p>Have questions or feedback? We'd love to hear from you.</p>
-        <div class="contact-form">
+
+      <section class="about-contact">
+
+        <h3>Do you have any questions?</h3>
+
+        <p>Fill out the form and we will get back to you as soon as possible.</p>
+
+        <form id="contact-form" class="contact-form" action="#" method="POST" novalidate>
+
           <div class="form-row">
+
             <div class="form-group">
-              <label for="contact-name">Name</label>
-              <input type="text" id="contact-name" placeholder="Your name" />
+              <label for="contact-name">Name <span>*</span></label>
+
+              <input type="text" id="contact-name" name="name" placeholder="Your name" required />
             </div>
+
             <div class="form-group">
               <label for="contact-surname">Surname</label>
-              <input type="text" id="contact-surname" placeholder="Your surname" />
+
+              <input type="text" id="contact-surname" name="surname" placeholder="Your surname" />
             </div>
+
           </div>
+
           <div class="form-group">
-            <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" placeholder="your@email.com" />
+            <label for="contact-email">Email <span>*</span></label>
+
+            <input type="email" id="contact-email" name="email" placeholder="your@email.com" required />
           </div>
+
           <div class="form-group">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" rows="4" placeholder="Tell us what's on your mind..."></textarea>
+            <label for="contact-message">Message <span>*</span></label>
+
+            <textarea id="contact-message" name="message" rows="6" placeholder="Write your message here..."
+              required></textarea>
           </div>
-          <button id="contact-submit">Send Message</button>
-          <p id="contact-feedback" class="contact-feedback"></p>
-        </div>
-      </div>
-      
+
+          <p id="contact-feedback" class="contact-feedback" aria-live="polite"></p>
+
+          <button type="submit" id="contact-submit">
+            Send Message ✉️
+          </button>
+
+        </form>
+
+      </section>
+
     </section>
 
   </main>
