@@ -192,7 +192,7 @@ const API_KEY = '6757199e74ac9488dc56336a2c22645a';
     errorEl.textContent = '';
 
     if (!city) {
-      errorEl.textContent = '⚠️ Please enter a city name.';
+      errorEl.textContent = 'Please enter a city name.';
       return;
     }
 
@@ -203,7 +203,7 @@ const API_KEY = '6757199e74ac9488dc56336a2c22645a';
       );
 
       if (!res.ok) {
-        errorEl.textContent = '❌ City not found. Please check the name and try again.';
+        errorEl.textContent = 'City not found. Please check the name and try again.';
         document.getElementById('weather-current').classList.add('hidden');
         document.getElementById('weather-forecast').classList.add('hidden');
         return;
@@ -220,7 +220,7 @@ const API_KEY = '6757199e74ac9488dc56336a2c22645a';
       renderForecast(forecastData);
 
     } catch (err) {
-      errorEl.textContent = '❌ Something went wrong. Please try again.';
+      errorEl.textContent = 'Something went wrong. Please try again.';
       console.error(err);
     }
   }
