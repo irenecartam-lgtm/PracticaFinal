@@ -127,7 +127,7 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
   const headers = { 'Content-Type': 'application/json' };
 
   btn.disabled = true;
-  btn.textContent = 'Sending... ⏳';
+  btn.textContent = 'Sending... ';
   feedback.textContent = '';
 
   try {
@@ -150,7 +150,7 @@ document.getElementById('contact-form').addEventListener('submit', async (e) => 
   }
 
   btn.disabled = false;
-  btn.textContent = 'Send Message ✉️';
+  btn.textContent = 'Send Message ';
 });
 
 
