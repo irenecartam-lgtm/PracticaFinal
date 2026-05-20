@@ -56,7 +56,7 @@ async function llamaAChatGPT(texto) {
       {
         parts: [
           {
-            text: "eres un asistente de viajes y te han preguntado: " + texto + ". Responde con pocas palabras.",
+            text: "eres un asistente de viajes y te han preguntado: " + texto + ". Responde con las palabras necesarias de forma clara y concisa.",
           },
         ],
       },
